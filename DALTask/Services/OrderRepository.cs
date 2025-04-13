@@ -1,5 +1,7 @@
 ﻿using DALTask.Data;
 using DALTask.Models;
+using Microsoft.EntityFrameworkCore;
+using Xunit;
 
 namespace DALTask.Services
 {
@@ -48,6 +50,8 @@ namespace DALTask.Services
             }
             return false;
         }
-
     }
 }
+
+      
+    

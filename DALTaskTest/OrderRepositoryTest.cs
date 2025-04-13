@@ -36,8 +36,9 @@ namespace DALTaskTest
             // Arrange
             var order = new Order { Id = 1, UserId = 1, Product = "Test Product", Quantity = 2 , Price = 1};
             // Act
-            var result = _orderRepository.CreateOrder(order);
+             _orderRepository.CreateOrder(order);
             // Assert
+            var result =  _context.Orders.Find(1);
             Assert.NotNull(result);
             Assert.Equal(order.Product, result.Product);
         }
@@ -94,19 +95,25 @@ namespace DALTaskTest
             Assert.True(result);
             Assert.Null(_orderRepository.GetOrderById(1));
         }
+
         [Fact]
-        public void GetOrdersByUserId_ShouldReturnOrders()
+        public void GetOrdersByUserIdAsync_ReturnsCorrectOrders()
         {
             // Arrange
-            var order1 = new Order { Id = 1, UserId = 1, Product = "Test Product", Quantity = 2, Price = 1 };
-            var order2 = new Order { Id = 2, UserId = 1, Product = "Test Product 2", Quantity = 3, Price = 2 };
-            _orderRepository.CreateOrder(order1);
-            _orderRepository.CreateOrder(order2);
+            _context.Orders.AddRange(
+                new Order { Id = 1, UserId = 1, Product = "Item A" },
+                new Order { Id = 2, UserId = 1, Product = "Item B" },
+                new Order { Id = 3, UserId = 2, Product = "Item C" }
+            );
+            _context.SaveChanges();
+
             // Act
-            var result = _orderRepository.GetOrdersByUserIdAsync(1);
+            var result = _orderRepository.GetOrdersByUserIdAsync(1).ToList();
             // Assert
-            Assert.NotNull(result);
-            Assert.Equal(2, result.Count());
+            Assert.Equal(2, result.Count);
+            Assert.All(result, order => Assert.Equal(1, order.UserId));
+
+
         }
 
 
