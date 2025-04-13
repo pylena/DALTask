@@ -101,9 +101,9 @@ namespace DALTaskTest
         {
             // Arrange
             _context.Orders.AddRange(
-                new Order { Id = 1, UserId = 1, Product = "Item A" },
-                new Order { Id = 2, UserId = 1, Product = "Item B" },
-                new Order { Id = 3, UserId = 2, Product = "Item C" }
+                new Order { Id = 1, UserId = 1, Product = "A" , Quantity=1 , Price= 5},
+                new Order { Id = 2, UserId = 1, Product = "B", Quantity = 2 , Price=5 },
+                new Order { Id = 3, UserId = 2, Product = "C" , Quantity=5 , Price=5}
             );
             _context.SaveChanges();
 
