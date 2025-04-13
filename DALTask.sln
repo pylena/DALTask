@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35919.96 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DALTask", "DALTask\DALTask.csproj", "{2CCCF173-8FCB-45C4-BB9C-4FC55A83F0CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DALTaskTest", "DALTaskTest\DALTaskTest.csproj", "{302418EE-649C-463C-B417-15E9C7517A1E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2CCCF173-8FCB-45C4-BB9C-4FC55A83F0CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CCCF173-8FCB-45C4-BB9C-4FC55A83F0CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CCCF173-8FCB-45C4-BB9C-4FC55A83F0CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CCCF173-8FCB-45C4-BB9C-4FC55A83F0CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{302418EE-649C-463C-B417-15E9C7517A1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{302418EE-649C-463C-B417-15E9C7517A1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{302418EE-649C-463C-B417-15E9C7517A1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{302418EE-649C-463C-B417-15E9C7517A1E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6203D2BF-FF66-42F9-B838-D19BDD6CB91E}
+	EndGlobalSection
+EndGlobal

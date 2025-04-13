@@ -1,0 +1,6 @@
+@DALTask_HostAddress = http://localhost:5063
+
+GET {{DALTask_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
