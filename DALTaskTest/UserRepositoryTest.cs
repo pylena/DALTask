@@ -72,6 +72,38 @@ namespace DALTaskTest
         }
 
 
+        [Fact]
+        public async Task UpdateUserAsync_ShouldUpdateUser()
+        {
+            // Arrange
+            var user = new User { Id = 1, FName = "LINA", LName = "AL", Email = "Lina@com" };
+            _context.Users.Add(user);
+            await _context.SaveChangesAsync();
+            // Act
+            user.FName = "Updated Name";
+            _userRepository.UpdateUser(user);
+            // Assert
+            var result = await _context.Users.FindAsync(1);
+            Assert.NotNull(result);
+            Assert.Equal("Updated Name", result.FName);
+        }
+        [Fact]
+        public async Task DeleteUserAsync_ShouldDeleteUser()
+        {
+            // Arrange
+            var user = new User { Id = 1, FName = "LINA", LName = "AL", Email = "Lina@com" };
+            _context.Users.Add(user);
+            await _context.SaveChangesAsync();
+            // Act
+            var result = _userRepository.DeleteUser(1);
+            // Assert
+            Assert.True(result);
+            var deletedUser = await _context.Users.FindAsync(1);
+            Assert.Null(deletedUser);
+        }
+
+
+
 
     }
 }
